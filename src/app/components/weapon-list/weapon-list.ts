@@ -18,7 +18,7 @@ export class WeaponList {
   selectedFaction = signal<string>('all');
   selectedWeaponType = signal<string>('all');
   
-  weapons = this.motuService.weapons;
+  weapons = this.motuService.armas;
   
   filteredWeapons = computed(() => {
     const filters: FilterOptions = {
@@ -27,7 +27,7 @@ export class WeaponList {
       faction: this.selectedFaction() !== 'all' ? this.selectedFaction() as any : undefined
     };
     
-    let result = this.motuService.filterEntities(filters) as Weapon[];
+    let result = this.motuService.filtrarEntidades(filters) as Weapon[];
     
     if (this.selectedWeaponType() !== 'all') {
       result = result.filter(weapon => weapon.weaponType === this.selectedWeaponType());
@@ -50,7 +50,7 @@ export class WeaponList {
 
   deleteWeapon(id: string) {
     if (confirm('¿Estás seguro de que quieres eliminar esta arma?')) {
-      this.motuService.deleteEntity(id);
+      this.motuService.eliminarEntidad(id);
     }
   }
 

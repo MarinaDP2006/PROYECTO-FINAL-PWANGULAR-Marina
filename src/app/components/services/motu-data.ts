@@ -18,7 +18,7 @@ export class MotuData {
     this.inicializarDatosPorDefecto();
   }
 
-  //  Carga los datos guardados desde localStorage. Si no hay datos guardados, inicializa con arrays vacíos
+  // Carga los datos guardados desde localStorage. Si no hay datos guardados, inicializa con arrays vacíos
   private cargarDatos(): void {
     const datosGuardados = localStorage.getItem(this.CLAVE_ALMACENAMIENTO);
     if (datosGuardados) {
@@ -34,7 +34,7 @@ export class MotuData {
     }
   }
 
-  // Guarda todos los datos actuales en localStorage.
+  // Guarda todos los datos actuales en localStorage
   private guardarDatos(): void {
     const datos = {
       personajes: this.personajes(),
@@ -99,10 +99,7 @@ export class MotuData {
     return this.todasEntidades().find(entidad => entidad.id === id);
   }
 
-  /* Filtra las entidades según los criterios especificados
-   * @param filtros Opciones de filtrado
-   * @returns Array de entidades que cumplen los criterios
-   */
+  // Filtra las entidades según los criterios especificados. Retorna array de entidades que cumplen los criterios
   filtrarEntidades(filtros: OpcionesFiltro): EntidadMOTU[] {
     return this.todasEntidades().filter(entidad => {
       if (filtros.tipo && entidad.tipo !== filtros.tipo) return false;
@@ -118,7 +115,7 @@ export class MotuData {
     });
   }
 
-  //  Genera un identificador único para nuevas entidades
+  // Genera un identificador único para nuevas entidades
   private generarId(): string {
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
   }

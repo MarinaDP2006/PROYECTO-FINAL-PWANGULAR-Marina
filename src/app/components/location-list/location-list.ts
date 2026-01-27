@@ -18,7 +18,7 @@ export class LocationList {
   selectedFaction = signal<string>('all');
   selectedLocationType = signal<string>('all');
   
-  locations = this.motuService.locations;
+  locations = this.motuService.lugares;
   
   filteredLocations = computed(() => {
     const filters: FilterOptions = {
@@ -27,7 +27,7 @@ export class LocationList {
       faction: this.selectedFaction() !== 'all' ? this.selectedFaction() as any : undefined
     };
     
-    let result = this.motuService.filterEntities(filters) as Location[];
+    let result = this.motuService.filtrarEntidades(filters) as Location[];
     
     if (this.selectedLocationType() !== 'all') {
       result = result.filter(location => location.locationType === this.selectedLocationType());
@@ -50,7 +50,7 @@ export class LocationList {
 
   deleteLocation(id: string) {
     if (confirm('¿Estás seguro de que quieres eliminar este lugar?')) {
-      this.motuService.deleteEntity(id);
+      this.motuService.eliminarEntidad(id);
     }
   }
 

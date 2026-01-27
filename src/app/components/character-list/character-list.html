@@ -44,20 +44,20 @@
           <img [src]="character.imageUrl" [alt]="character.name"(error)="$event.target.src = '/assets/images/placeholder-character.png'">
         </div>
         <div class="character-badges">
-          <span class="badge faction-badge" [attr.data-faction]="character.faction">
-            {{ getFactionIcon(character.faction) }}
+          <span class="badge faction-badge" [attr.data-faction]="character.faccion">
+            {{ getFactionIcon(character.faccion || '') }}
           </span>
-          <span class="badge category-badge" [attr.data-category]="character.category">
-            {{ getCategoryIcon(character.category) }}
+          <span class="badge category-badge" [attr.data-category]="character.categoria">
+            {{ getCategoryIcon(character.categoria || '') }}
           </span>
-          <span class="badge power-badge" [attr.data-power]="character.powerType">
-            {{ getPowerTypeIcon(character.powerType) }}
+          <span class="badge power-badge" [attr.data-power]="character.tipoPoder">
+            {{ getPowerTypeIcon(character.tipoPoder || '') }}
           </span>
         </div>
       </div>
 
       <div class="card-content">
-        <h3 class="character-name">{{ character.name }}</h3>
+        <h3 class="character-name">{{ character.nombre }}</h3>
 
         @if (character.realName) {
         <p class="real-name">{{ character.realName }}</p>

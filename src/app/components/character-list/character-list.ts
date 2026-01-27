@@ -18,7 +18,7 @@ export class CharacterList {
   selectedFaction = signal<string>('all');
   selectedCategory = signal<string>('all');
   
-  characters = this.motuService.characters;
+  characters = this.motuService.personajes;
   
   filteredCharacters = computed(() => {
     const filters: FilterOptions = {
@@ -28,7 +28,7 @@ export class CharacterList {
       category: this.selectedCategory() !== 'all' ? this.selectedCategory() as any : undefined
     };
     
-    return this.motuService.filterEntities(filters) as Character[];
+    return this.motuService.filtrarEntidades(filters) as Character[];
   });
 
   onSearchChange(event: any) {
@@ -45,7 +45,7 @@ export class CharacterList {
 
   deleteCharacter(id: string) {
     if (confirm('¿Estás seguro de que quieres eliminar este personaje?')) {
-      this.motuService.deleteEntity(id);
+      this.motuService.eliminarEntidad(id);
     }
   }
 
