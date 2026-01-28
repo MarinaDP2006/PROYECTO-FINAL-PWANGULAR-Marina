@@ -13,7 +13,6 @@ import { routes } from './app.routes';
 
 // Componentes
 import { App } from './app';
-import { Home } from './components/inicio/home';
 import { Navbar } from './components/navbar/navbar';
 import { CharacterList } from './components/listaPersonaje/character-list';
 import { CharacterDetail } from './components/detallesPersonaje/character-detail';
@@ -24,7 +23,6 @@ import { LocationList } from './components/listaLugares/location-list';
 @NgModule({
   declarations: [
     App,
-    Home,
     CharacterList,
     CharacterDetail,
     CharacterForm,

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Personaje, Arma, Lugar } from './components/interfaces/motu-types';
 
+// Datos guardados en InMemoryDataService API
 @Injectable({
   providedIn: 'root',
 })
@@ -12,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '1',
         nombre: 'He-Man',
         descripcion: 'El héroe de Eternia, príncipe Adam.',
-        urlImagen: 'images/personajes/he-man.jpg',
+        urlImagen: '',
         tipo: 'personaje',
         categoria: 'heroe',
         faccion: 'buenos',
@@ -23,7 +24,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '2',
         nombre: 'Skeletor',
         descripcion: 'Señor de la Destrucción y tío del príncipe Adam, guerrero de Eternia como He-Man',
-        urlImagen: 'images/personajes/skeletor.jpg',
+        urlImagen: '',
         tipo: 'personaje',
         categoria: 'villano',
         faccion: 'malos',
@@ -34,7 +35,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '3',
         nombre: 'Teela',
         descripcion: 'Capitana de la Guardia Real y nueva hechiera de Eternia.',
-        urlImagen: 'images/personajes/teela.jpg',
+        urlImagen: '',
         tipo: 'personaje',
         categoria: 'heroe',
         faccion: 'buenos',
@@ -45,7 +46,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '4',
         nombre: 'Evil-Lyn',
         descripcion: 'Hechicera malvada y lugarteniente de Skeletor. Busca la redención.',
-        urlImagen: 'images/personajes/evil-lyn.jpg',
+        urlImagen: '',
         tipo: 'personaje',
         categoria: 'villano',
         faccion: 'malos',
@@ -56,7 +57,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '5',
         nombre: 'Man-At-Arms',
         descripcion: 'Maestro de armas e inventor del reino. Padre de Teela.',
-        urlImagen: 'images/personajes/man-at-arms.jpg',
+        urlImagen: '',
         tipo: 'personaje',
         categoria: 'heroe',
         faccion: 'buenos',
@@ -67,7 +68,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '6',
         nombre: 'Orko',
         descripcion: 'Duende mágico de Trolla, amigo fiel de He-Man y maestro de la magia.',
-        urlImagen: 'images/personajes/orko.jpg',
+        urlImagen: '',
         tipo: 'personaje',
         categoria: 'heroe',
         faccion: 'buenos',
@@ -78,7 +79,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '7',
         nombre: 'Battle Cat',
         descripcion: 'Compañero de He-Man. Se transforma en Battle Cat por la espada. Leal a su maestro, es transporte y una poderosa bestia.',
-        urlImagen: 'images/personajes/battle-cat.jpg',
+        urlImagen: '',
         tipo: 'personaje',
         categoria: 'heroe',
         faccion: 'buenos',
@@ -89,7 +90,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '8',
         nombre: 'Beast Man',
         descripcion: 'Guerrero salvaje con poderes sobre las bestias. Lugarteniente de Skeletor.',
-        urlImagen: 'images/personajes/beastMan.jpg',
+        urlImagen: '',
         tipo: 'personaje',
         categoria: 'villano',
         faccion: 'malos',
@@ -100,7 +101,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '9',
         nombre: 'Trap Jaw',
         descripcion: 'Cyborg malvado con mandíbula mecánica y múltiples armas integradas.',
-        urlImagen: 'images/personajes/trapJaw.jpg',
+        urlImagen: '',
         tipo: 'personaje',
         categoria: 'villano',
         faccion: 'malos',
@@ -111,7 +112,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '10',
         nombre: 'Tri-Klops',
         descripcion: 'Guerrero de tres ojos con habilidades de visión especiales.',
-        urlImagen: 'images/personajes/triKlops.jpg',
+        urlImagen: '',
         tipo: 'personaje',
         categoria: 'villano',
         faccion: 'malos',
@@ -119,13 +120,12 @@ export class InMemoryDataService implements InMemoryDbService {
         origen: 'Eternia'
       }
     ];
-
     const armas: Arma[] = [
       {
         id: '11',
         nombre: 'Espada del Poder',
         descripcion: 'La espada que da poder a He-Man.',
-        urlImagen: 'images/armas/espada-poder.jpg',
+        urlImagen: '',
         tipo: 'arma',
         tipoArma: 'espada',
         faccion: 'buenos',
@@ -136,7 +136,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '12',
         nombre: 'Bastón de Havoc',
         descripcion: 'Bastón mágico de Skeletor.',
-        urlImagen: 'images/armas/baston.jpg',
+        urlImagen: '',
         tipo: 'arma',
         tipoArma: 'baston',
         faccion: 'malos',
@@ -147,7 +147,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '13',
         nombre: 'Escudo de Eternia',
         descripcion: 'Escudo protector del reino de Eternia.',
-        urlImagen: 'images/armas/escudo.jpg',
+        urlImagen: '',
         tipo: 'arma',
         tipoArma: 'escudo',
         faccion: 'buenos',
@@ -155,13 +155,12 @@ export class InMemoryDataService implements InMemoryDbService {
         origen: 'Eternia'
       }
     ];
-
     const lugares: Lugar[] = [
       {
         id: '14',
         nombre: 'Castillo Grayskull',
         descripcion: 'Fortaleza mística, fuente del poder de He-Man.',
-        urlImagen: 'images/lugares/greyskull.jpg',
+        urlImagen: '',
         tipo: 'lugar',
         tipoLugar: 'castillo',
         faccion: 'buenos',
@@ -172,7 +171,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '15',
         nombre: 'Montaña Serpiente',
         descripcion: 'Guarida de Skeletor.',
-        urlImagen: 'images/lugares/snake-mountain.jpg',
+        urlImagen: '',
         tipo: 'lugar',
         tipoLugar: 'fortaleza',
         faccion: 'malos',
@@ -183,7 +182,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: '16',
         nombre: 'Palacio Real',
         descripcion: 'Sede del gobierno de Eternia.',
-        urlImagen: 'images/lugares/palacio-real.jpg',
+        urlImagen: '',
         tipo: 'lugar',
         tipoLugar: 'palacio',
         faccion: 'buenos',
@@ -196,8 +195,6 @@ export class InMemoryDataService implements InMemoryDbService {
 
   // Genera IDs únicos para nuevos elementos
   genId<T extends {id: string}>(collection: T[]): string {
-    return collection.length > 0
-      ? String(Math.max(...collection.map(item => parseInt(item.id))) + 1)
-      : '1';
+    return collection.length > 0 ? String(Math.max(...collection.map(item => parseInt(item.id))) + 1): '1';
   }
 }

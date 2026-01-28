@@ -25,7 +25,7 @@ src/
 │   ├── app.config.ts
 │   ├── app.module.ts
 │   └── app.routes.ts
-├── images/                         # Recursos de imágenes
+├── images/                         # Imágenes
 │   ├── personajes/
 │   ├── armas/
 │   └── lugares/
