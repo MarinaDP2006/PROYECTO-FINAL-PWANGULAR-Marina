@@ -77,7 +77,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: '7',
         nombre: 'Battle Cat',
-        descripcion: 'Compañero de confianza de He-Man. Conocido como Cringer cuando es un tigre cobarde del príncipe Adam, se transforma en Battle Cat mediante la espada mágica. Leal a su maestro, es el transporte de He-Man y una poderosa bestia.',
+        descripcion: 'Compañero de He-Man. Se transforma en Battle Cat por la espada. Leal a su maestro, es transporte y una poderosa bestia.',
         urlImagen: 'images/personajes/battle-cat.jpg',
         tipo: 'personaje',
         categoria: 'heroe',
