@@ -1,15 +1,14 @@
 # PROYECTO-FINAL-PWANGULAR-Marina
-### Descripción del Proyecto
 La aplicación gestiona información sobre el universo de Masters of the Universe (MOTU), incluyendo personajes, armas y lugares.
 
-### Características Principales
+### Características
 - **Gestión de Personajes**: Lista detallada y formularios para personajes de MOTU
 - **Gestión de Armas**: Lista de Armas
 - **Gestión de Lugares**: Información sobre lugares 
 - **Navegación**: Navegación completo con navbar
 - **Datos en Memoria**: Servicio de datos como simulador
 
-### Estructura del Proyecto
+### Estructura
 ```
 src/
 ├── app/
@@ -33,7 +32,7 @@ src/
 └── styles.css
 ```
 
-### Tecnologías Utilizadas
+### Usado
 - **Angular**: Framework principal
 - **TypeScript**: Lenguaje de programación
 - **HTML/CSS**: Estructura y estilos
