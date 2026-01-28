@@ -1,0 +1,70 @@
+<div class="character-detail-container">
+  <!-- Mensaje de carga -->
+  @if (loading()) {
+    <div class="loading-message">
+      <p>🔄 Cargando detalles del personaje...</p>
+    </div>
+  }
+
+  <!-- Mensaje de error -->
+  @if (error()) {
+    <div class="error-message">
+      <p>❌ {{ error() }}</p>
+    </div>
+  }
+
+  @if (character(); as char) {
+    <div class="character-detail-card">
+      <div class="character-image">
+        <img [src]="char.urlImagen"
+             [alt]="char.nombre"
+             [title]="char.nombre"
+             (error)="onImageError($event)" />
+      </div>
+
+      <div class="character-info">
+        <h1>{{ char.nombre }}</h1>
+        <p class="description">{{ char.descripcion }}</p>
+
+        <div class="character-properties">
+          <div class="property">
+            <label>Categoría:</label>
+            <span>{{ char.categoria }}</span>
+          </div>
+          <div class="property">
+            <label>Facción:</label>
+            <span>{{ char.faccion }}</span>
+          </div>
+          <div class="property">
+            <label>Tipo de Poder:</label>
+            <span>{{ char.tipoPoder }}</span>
+          </div>
+          <div class="property">
+            <label>Origen:</label>
+            <span>{{ char.origen }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="character-actions">
+        <button (click)="editCharacter()" class="edit-btn">
+          Editar
+        </button>
+        <button (click)="deleteCharacter()" class="delete-btn">
+          Eliminar
+        </button>
+        <button (click)="goBack()" class="back-btn">
+          Volver
+        </button>
+      </div>
+    </div>
+  } @else {
+    <div class="not-found">
+      <h2>Personaje no encontrado</h2>
+      <p>El personaje que buscas no existe.</p>
+      <button (click)="goBack()" class="back-btn">
+        Volver a la lista
+      </button>
+    </div>
+  }
+</div>

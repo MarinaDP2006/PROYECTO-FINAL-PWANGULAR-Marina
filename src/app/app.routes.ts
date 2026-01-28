@@ -1,17 +1,19 @@
 import { Routes } from '@angular/router';
-import { CharacterList } from './components/character-list/character-list';
-import { WeaponList } from './components/weapon-list/weapon-list';
-import { LocationList } from './components/location-list/location-list';
-import { CharacterForm } from './components/character-form/character-form';
-import { CharacterDetail } from './components/character-detail/character-detail';
+import { Home } from './components/inicio/home';
+import { CharacterList } from './components/listaPersonaje/character-list';
+import { WeaponList } from './components/listaArmas/weapon-list';
+import { LocationList } from './components/listaLugares/location-list';
+import { CharacterForm } from './components/formPersonaje/character-form';
+import { CharacterDetail } from './components/detallesPersonaje/character-detail';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/characters', pathMatch: 'full' },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  { path: 'inicio', component: Home },
   { path: 'characters', component: CharacterList },
-  { path: 'characters/:id', component: CharacterDetail },
+  { path: 'character-detail/:id', component: CharacterDetail },
+  { path: 'character-form', component: CharacterForm },
+  { path: 'character-form/:id', component: CharacterForm },
   { path: 'weapons', component: WeaponList },
   { path: 'locations', component: LocationList },
-  { path: 'add', component: CharacterForm },
-  { path: 'edit/:id', component: CharacterForm },
   { path: '**', redirectTo: '/characters' }
 ];

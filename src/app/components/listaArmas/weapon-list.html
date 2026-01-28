@@ -1,0 +1,24 @@
+<div class="weapon-list-container">
+  <header class="page-header">
+    <h1>Armas del Universo MOTU</h1>
+    <p>Las poderosas armas de Eternia</p>
+  </header>
+  <div class="weapons-grid">
+    @for (weapon of weapons(); track weapon.id) {
+      <div class="weapon-card">
+        <div class="weapon-image">
+            <img [src]="weapon.urlImagen"
+                 [alt]="weapon.nombre"
+                 [title]="weapon.nombre"
+                 (error)="onImageError($event)" />
+        </div>
+        <h3>{{ weapon.nombre }}</h3>
+        <p>{{ weapon.descripcion }}</p>
+      </div>
+    } @empty {
+      <div class="no-results">
+        <p>No se encontraron armas</p>
+      </div>
+    }
+  </div>
+</div>

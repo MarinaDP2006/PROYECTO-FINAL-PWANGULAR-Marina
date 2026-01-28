@@ -1,0 +1,24 @@
+<div class="location-list-container">
+  <header class="page-header">
+    <h1>Lugares del Universo MOTU</h1>
+    <p>Los lugares míticos de Eternia</p>
+  </header>
+  <div class="locations-grid">
+    @for (location of locations(); track location.id) {
+      <div class="location-card">
+        <div class="location-image">
+            <img [src]="location.urlImagen"
+                 [alt]="location.nombre"
+                 [title]="location.nombre"
+                 (error)="onImageError($event)" />
+        </div>
+        <h3>{{ location.nombre }}</h3>
+        <p>{{ location.descripcion }}</p>
+      </div>
+    } @empty {
+      <div class="no-results">
+        <p>No se encontraron lugares</p>
+      </div>
+    }
+  </div>
+</div>

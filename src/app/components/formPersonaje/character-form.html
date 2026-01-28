@@ -1,0 +1,150 @@
+<div class="character-form-container">
+  <div class="container">
+    <div class="form-card">
+      <div class="form-header">
+        <h1>{{ isEditMode() ? 'Editar Personaje' : 'Crear Nuevo Personaje' }}</h1>
+      </div>
+
+      <!-- Mensaje de carga -->
+      @if (loading()) {
+        <div class="loading-message">
+          <p>🔄 {{ isEditMode() ? 'Guardando cambios...' : 'Creando personaje...' }}</p>
+        </div>
+      }
+
+      <!-- Mensaje de error -->
+      @if (error()) {
+        <div class="error-message">
+          <p>❌ {{ error() }}</p>
+        </div>
+      }
+
+      <div class="form-body">
+        <form [formGroup]="characterForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label class="form-label" for="nombre">Nombre del Personaje *</label>
+            <input
+              id="nombre"
+              type="text"
+              formControlName="nombre"
+              class="form-control"
+              [class.is-invalid]="characterForm.get('nombre')?.invalid && characterForm.get('nombre')?.touched"
+              placeholder="Ej: He-Man, Skeletor..."
+            />
+            @if (characterForm.get('nombre')?.invalid && characterForm.get('nombre')?.touched) {
+              <div class="invalid-feedback">
+                El nombre es obligatorio (mínimo 2 caracteres)
+              </div>
+            }
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="categoria">Categoría *</label>
+            <select
+              id="categoria"
+              formControlName="categoria"
+              class="form-select"
+              [class.is-invalid]="characterForm.get('categoria')?.invalid && characterForm.get('categoria')?.touched"
+            >
+              <option value="">Selecciona una categoría</option>
+              <option value="heroe">Héroe</option>
+              <option value="villano">Villano</option>
+              <option value="neutral">Neutral</option>
+            </select>
+            @if (characterForm.get('categoria')?.invalid && characterForm.get('categoria')?.touched) {
+              <div class="invalid-feedback">
+                Debes seleccionar una categoría
+              </div>
+            }
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="faccion">Facción *</label>
+            <select
+              id="faccion"
+              formControlName="faccion"
+              class="form-select"
+              [class.is-invalid]="characterForm.get('faccion')?.invalid && characterForm.get('faccion')?.touched"
+            >
+              <option value="">Selecciona una facción</option>
+              <option value="buenos">Buenos</option>
+              <option value="malos">Malos</option>
+              <option value="neutrales">Neutrales</option>
+            </select>
+            @if (characterForm.get('faccion')?.invalid && characterForm.get('faccion')?.touched) {
+              <div class="invalid-feedback">
+                Debes seleccionar una facción
+              </div>
+            }
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="tipoPoder">Tipo de Poder *</label>
+            <select
+              id="tipoPoder"
+              formControlName="tipoPoder"
+              class="form-select"
+              [class.is-invalid]="characterForm.get('tipoPoder')?.invalid && characterForm.get('tipoPoder')?.touched"
+            >
+              <option value="">Selecciona el tipo de poder</option>
+              <option value="magia">Magia</option>
+              <option value="tecnologia">Tecnología</option>
+              <option value="natural">Natural</option>
+            </select>
+            @if (characterForm.get('tipoPoder')?.invalid && characterForm.get('tipoPoder')?.touched) {
+              <div class="invalid-feedback">
+                Debes seleccionar un tipo de poder
+              </div>
+            }
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="descripcion">Descripción *</label>
+            <textarea
+              id="descripcion"
+              formControlName="descripcion"
+              class="form-control"
+              rows="4"
+              [class.is-invalid]="characterForm.get('descripcion')?.invalid && characterForm.get('descripcion')?.touched"
+              placeholder="Describe al personaje..."
+            ></textarea>
+            @if (characterForm.get('descripcion')?.invalid && characterForm.get('descripcion')?.touched) {
+              <div class="invalid-feedback">
+                La descripción es obligatoria (mínimo 10 caracteres)
+              </div>
+            }
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="urlImagen">URL de la Imagen *</label>
+            <input
+              id="urlImagen"
+              type="text"
+              formControlName="urlImagen"
+              class="form-control"
+              [class.is-invalid]="characterForm.get('urlImagen')?.invalid && characterForm.get('urlImagen')?.touched"
+              placeholder="Ej: https://via.placeholder.com/300x400/0066cc/ffffff?text=Mi+Personaje"
+            />
+            @if (characterForm.get('urlImagen')?.invalid && characterForm.get('urlImagen')?.touched) {
+              <div class="invalid-feedback">
+                La URL de la imagen es obligatoria
+              </div>
+            }
+            <div class="form-text">
+              Introduce la URL de la imagen (ejemplo: https://via.placeholder.com/300x400/color/texto)
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" [disabled]="characterForm.invalid">
+              {{ isEditMode() ? 'Actualizar' : 'Crear' }} Personaje
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="goBack()">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

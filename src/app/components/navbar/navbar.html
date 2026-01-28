@@ -1,33 +1,36 @@
-<nav class="motu-navbar">
-  <div class="navbar-container">
-    <div class="navbar-brand">
-      <h1>⚔️ Masters of the Universe ⚔️</h1>
-    </div>
-    
-    <div class="navbar-menu">
-      <ul class="navbar-nav">
+<nav class="navbar navbar-expand-lg motu-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <h1>Final - Angular - Marina</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+     <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a routerLink="/characters" class="nav-link" routerLinkActive="active">
-            <span class="nav-icon">🛡️</span>
-            Personajes
+          <a routerLink="/inicio" class="nav-link" routerLinkActive="active">
+            INICIO
           </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/weapons" class="nav-link" routerLinkActive="active">
-            <span class="nav-icon">⚔️</span>
-            Armas
+          <a routerLink="/characters" class="nav-link" routerLinkActive="active">
+            PERSONAJES
           </a>
         </li>
         <li class="nav-item">
           <a routerLink="/locations" class="nav-link" routerLinkActive="active">
-            <span class="nav-icon">🏰</span>
-            Lugares
+            LUGARES
           </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/add" class="nav-link nav-cta" routerLinkActive="active">
-            <span class="nav-icon">➕</span>
-            Agregar
+          <a routerLink="/weapons" class="nav-link" routerLinkActive="active">
+            ARMAS
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/character-form" class="nav-link nav-cta" routerLinkActive="active">
+            AGREGAR PERSONAJE
           </a>
         </li>
       </ul>
