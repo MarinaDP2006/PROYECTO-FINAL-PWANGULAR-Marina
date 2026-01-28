@@ -55,10 +55,3 @@ npm install
 ng serve
 
 # La aplicación estará disponible en http://localhost:4200
-```
-
-### Estado del Proyecto
-✅ Proyecto Final Completado - Tag: PROYECTO-FINAL-PWANGULAR-Marina
-
-### Fecha de Entrega
-Enero 2026
